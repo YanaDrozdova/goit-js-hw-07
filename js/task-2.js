@@ -13,10 +13,12 @@ const images = [
   },
 ];
 
+// 1-й спосіб
+
 const itemsEl = images.map((image) => {
   const itemEl = document.createElement("li");
   const imgEl = document.createElement("img");
-  imgEl.setAttribute("url", image.url);
+  imgEl.setAttribute("src", image.url);
   imgEl.setAttribute("alt", image.alt);
   imgEl.classList.add("img");
   imgEl.setAttribute("width", 360);
@@ -29,19 +31,15 @@ console.log(itemsEl);
 const galleryEl = document.querySelector(".gallery");
 galleryEl.append(...itemsEl);
 
-// переробила код. Але картинки так і не відображаються в браузері.
-// не знаю,що робити
-
-// другий спосіб вирішення задачі
-// також картинки не відображаються
+// 2-й спосіб
 
 // const galleryEl = document.querySelector(".gallery");
 // const markup = images
 //   .map(
 //     (image) =>
 //       `<li class="gallery-item">
-//   <img url = '${image.url}', alt = '${image.alt}'/>
-//   </li> `
+//          <img src="${image.url}" alt="${image.alt}" width="360" />
+//        </li>`
 //   )
 //   .join("");
 
